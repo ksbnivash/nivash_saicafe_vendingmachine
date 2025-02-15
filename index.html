@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Machine Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>    
+   
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo"> <span id="sai">SAI CAFE VENDING</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Why Choose Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+        
+        <div class="menu-toggle">&#9776;</div>
+    </nav>
+
+    <script>
+        // Select menu toggle button and nav links
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        // Toggle menu on click
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("nav-active");
+        });
+
+    </script>
+   
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="typing">Perfect Brew, Every Time</h1>
+            <p class="slide-up">Discover the finest coffee machines for your perfect cup.</p>
+            <a href="#" class="btn scale-in">Explore More</a>
+        </div>
+    </section>
+
+
+
+    <section class="products">
+        <h2>Our Best Coffee Machines</h2>
+        <div class="product-grid">
+            <div class="product-card">
+             
+                    <img src="images/pro1.avif" id="imagelogo">
+                
+                
+                <a href="#" class="buy-button">View More</a>
+            </div>
+
+            <div class="product-card">
+                <img src="images/pro2.avif">
+                <a href="#" class="buy-button">View More</a>
+            </div>
+
+            <div class="product-card">
+                <img src="images/pro3.avif" alt="">
+               <a href="#" class="buy-button">View More </a>
+            </div>
+
+            <div class="product-card">
+                <img src="images/pro4.avif" alt="">
+                <a href="#" class="buy-button">View More</a>
+            </div>
+        </div>
+    </section>
+
+
+   <section>
+    <h1 id="why">Why Choose Us?</h1>
+    <div class="slider-wrapper">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="images/back1.avif" alt="Image 1"><span>Premium Quality Coffee</span>
+                </div>
+                <div class="slide">
+                    <img src="images/back1.avif" alt="Image 2"><span> Fast & Convenient</span>
+                </div>
+                <div class="slide">
+                    <img src="images/back1.avif" alt="Image 3"><span> Reliable & Low Maintenance</span>
+                </div>
+                <div class="slide">
+                    <img src="images/back1.avif" alt="Image 4"><span> Cost-Effective Solutions</span>
+                </div>
+                <div class="slide">
+                    <img src="images/back1.avif" alt="Image 5"><span>Customizable & Versatile</span>
+                </div>
+                <div class="slide">
+                    <img src="images/back1.avif" alt="Image 6"><span>Exceptional Customer Support</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+        <div class="description">
+            <p id="image-description">Premium Quality Coffee
+                Our vending machines are stocked with high-quality coffee beans and ingredients to ensure a rich and flavorful experience in every cup.</p>
+        </div>
+    </div>
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll(".slide");
+        const descriptions = [
+            
+"Our vending machines are stocked with high-quality coffee beans and ingredients to ensure a rich and flavorful experience in every cup.",
+
+"Enjoy a freshly brewed cup of coffee in seconds—perfect for offices, hospitals, schools, and public spaces.",
+            
+"Our machines are designed for durability and ease of use, with minimal maintenance required. Plus, we provide servicing and support.",
+           
+"We offer affordable vending machine options with flexible pricing plans to suit your business needs.",
+          
+"From espresso to cappuccino, our machines can be customized to serve a variety of hot beverages tailored to your preference.",
+            
+"Our team is always ready to assist you with installation, maintenance, and any inquiries to ensure a seamless experience."
+        ];
+        const descriptionText = document.getElementById("image-description");
+        
+        function moveSlide(step) {
+            index += step;
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            document.querySelector(".slider").style.transform = `translateX(-${index * 100}%)`;
+            descriptionText.textContent = descriptions[index];
+        }
+    </script>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            
+            <div class="service">
+                <i class="icon"></i>
+                <p>Coffee vending machine rental or purchase<p>
+               
+            </div>
+            <div class="service">
+                <i class="icon"></i>
+                <p>Maintenance and repair services</p>
+                
+            </div>
+            <div class="service">
+                <i class="icon"></i>
+                <p>Suppliers for coffee and related products</p>
+              
+            </div>
+            <div class="service">
+                <i class="icon"></i>
+                <p>A specific brand or type of machine</p>
+              
+            </div>
+        </div>
+    </section>
+     
+
+
+    <section class="partners">
+        <h2>Our Partners</h2>
+        <div class="partners-container">
+            <div class="partner"><img src="images/part3.avif" alt="Partner 1"></div>
+            <div class="partner"><img src="images/part4.avif" alt="Partner 2"></div>
+            <div class="partner"><img src="images/part5.avif" alt="Partner 3"></div>
+            <div class="partner"><img src="images/part6.avif" alt="Partner 4"></div>
+            <div class="partner"><img src="images/part7.avif" alt="Partner 5"></div>
+        </div>
+    </section>
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>📍 Mount Road,Chennai</p>
+                <p>📞 +123 456 7890</p>
+                <p>✉️  saicafevending@yahoo.com</p>
+            </div>
+    
+            <!-- Social Media Icons -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-google"></a>
+<a href="#" class="fa fa-linkedin"></a>
+<a href="#" class="fa fa-youtube"></a>
+<div class="footer-bottom">
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
+</div>
+
+        </div>
+    
+        <!-- Footer Bottom -->
+        
+    </footer>
+    
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
